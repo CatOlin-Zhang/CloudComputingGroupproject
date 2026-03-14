@@ -1,0 +1,59 @@
+name: Aliyun ECS Deploy (Password Auth)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Aliyun ECS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Deploy application via Password
+        run: |
+          # 定义变量，方便阅读
+          USER="${{ secrets.EC2_USER }}"
+          HOST="${{ secrets.EC2_HOST }}"
+          PASS="${{ secrets.EC2_PASSWORD }}"
+          
+          echo "🚀 Connecting to $USER@$HOST using password..."
+
+          # 使用 sshpass 执行远程命令
+          # -p 后面跟密码，-o 选项禁用主机密钥检查以避免交互
+          sshpass -p "$PASS" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$USER@$HOST" << 'EOF'
+            
+            echo "✅ SSH Connection Successful!"
+            echo "📂 Changing directory..."
+            
+            # 1. 进入项目目录 (请确认路径正确)
+            cd ~/chatbot_comp7940 || { echo "❌ Directory not found!"; exit 1; }
+            
+            # 2. 拉取最新代码
+            echo "⬇️ Pulling latest code..."
+            git pull origin main
+            
+            # 3. 停止旧进程
+            echo "🛑 Stopping old process..."
+            pkill -f "python chatbot.py" || true
+            sleep 2
+            
+            # 4. 启动新进程 (根据你的实际路径调整)
+            echo "▶️ Starting new process..."
+            # 如果有虚拟环境：
+            nohup ~/chatbot_comp7940/venv/bin/python chatbot.py > app.log 2>&1 &
+            
+            # 如果没有虚拟环境，用下面这行：
+            # nohup python chatbot.py > app.log 2>&1 &
+            
+            echo "✅ Deployment finished!"
+            ps -ef | grep chatbot.py | grep -v grep
+            
+          EOF
