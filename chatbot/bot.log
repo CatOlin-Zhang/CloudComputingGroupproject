@@ -1,0 +1,461 @@
+2026-03-14 15:36:42,104 - __main__ - INFO - Setting up environment...
+2026-03-14 15:36:42,129 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:36:42,129 - __main__ - INFO - Database initialized.
+2026-03-14 15:36:42,129 - __main__ - INFO - No new Excel files found. Using existing database.
+2026-03-14 15:36:42,129 - __main__ - INFO - ==============================
+2026-03-14 15:36:42,129 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:36:42,129 - __main__ - INFO - ==============================
+2026-03-14 15:36:42,129 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:36:42,131 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:36:42,276 - root - INFO - INIT: Registering the message handler...
+2026-03-14 15:36:42,276 - root - INFO - INIT: Initialization done!
+2026-03-14 15:36:42,902 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:36:43,101 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:36:43,105 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:36:53,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:37:04,472 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:37:04,474 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:37:04,474 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:39:49,887 - __main__ - INFO - Setting up environment...
+2026-03-14 15:39:49,889 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:39:49,889 - __main__ - INFO - Database initialized.
+2026-03-14 15:39:49,889 - __main__ - INFO - No new Excel files found in current dir or 'JobData'. Using existing database.
+2026-03-14 15:39:49,890 - __main__ - INFO - ==============================
+2026-03-14 15:39:49,890 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:39:49,890 - __main__ - INFO - ==============================
+2026-03-14 15:39:49,890 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:39:49,891 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:39:49,972 - root - INFO - INIT: Registering the message handler...
+2026-03-14 15:39:49,972 - root - INFO - INIT: Initialization done!
+2026-03-14 15:39:50,525 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:39:50,704 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:39:50,707 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:40:01,254 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:40:06,682 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:40:06,683 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:40:06,683 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:41:36,539 - __main__ - INFO - Setting up environment...
+2026-03-14 15:41:36,539 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:41:36,540 - __main__ - INFO - Database initialized.
+2026-03-14 15:41:36,540 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:41:36,540 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:41:36,540 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:41:36,540 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:41:36,540 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:41:36,540 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:41:36,544 - job_database - ERROR - Error loading jobs from Excel: `Import openpyxl` failed.  Use pip or conda to install the openpyxl package.
+2026-03-14 15:41:36,544 - __main__ - ERROR - Failed to import C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx: cannot access local variable 'conn' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\compat\_optional.py", line 158, in import_optional_dependency
+    module = importlib.import_module(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'openpyxl'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 132, in load_jobs_from_excel
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 62, in load_jobs_from_excel
+    df = pd.read_excel(excel_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\io\excel\_base.py", line 481, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\io\excel\_base.py", line 1621, in __init__
+    self._reader = self._engines[engine](
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 559, in __init__
+    import_optional_dependency("openpyxl")
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\compat\_optional.py", line 161, in import_optional_dependency
+    raise ImportError(msg) from err
+ImportError: `Import openpyxl` failed.  Use pip or conda to install the openpyxl package.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 70, in setup_environment
+    count = load_jobs_from_excel(excel_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 134, in load_jobs_from_excel
+    conn.close()
+    ^^^^
+UnboundLocalError: cannot access local variable 'conn' where it is not associated with a value
+2026-03-14 15:41:36,559 - __main__ - INFO - Total jobs imported in this session: 0
+2026-03-14 15:41:36,559 - __main__ - INFO - ==============================
+2026-03-14 15:41:36,559 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:41:36,559 - __main__ - INFO - ==============================
+2026-03-14 15:41:36,559 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:41:36,560 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:41:36,650 - root - INFO - INIT: Registering the message handler...
+2026-03-14 15:41:36,650 - root - INFO - INIT: Initialization done!
+2026-03-14 15:41:37,281 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:41:37,493 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:41:37,497 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:41:48,089 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:41:58,291 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:08,493 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:18,691 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:28,899 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:39,106 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:49,307 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:42:59,502 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:43:09,705 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:43:20,298 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:43:20,300 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:43:20,300 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:45:36,689 - __main__ - INFO - Setting up environment...
+2026-03-14 15:45:36,690 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:45:36,690 - __main__ - INFO - Database initialized.
+2026-03-14 15:45:36,690 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:45:36,691 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:45:36,691 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:45:36,691 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:45:36,691 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:45:36,691 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:45:36,724 - job_database - WARNING - Missing columns in Excel: {'企业名称'}. Proceeding with available columns.
+2026-03-14 15:45:36,730 - job_database - ERROR - Error loading jobs from Excel: Index(['company_name'], dtype='str')
+2026-03-14 15:45:36,730 - __main__ - ERROR - Failed to import C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx: Index(['company_name'], dtype='str')
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 70, in setup_environment
+    count = load_jobs_from_excel(excel_file)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 125, in load_jobs_from_excel
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 101, in load_jobs_from_excel
+    df.drop_duplicates(subset=['company_name', 'position_title', 'deadline'], keep='last', inplace=True)
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\core\frame.py", line 7941, in drop_duplicates
+    result = self[-self.duplicated(subset, keep=keep)]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\pandas\core\frame.py", line 8071, in duplicated
+    raise KeyError(Index(diff))
+KeyError: Index(['company_name'], dtype='str')
+2026-03-14 15:45:36,735 - __main__ - INFO - Total jobs imported in this session: 0
+2026-03-14 15:45:36,735 - __main__ - INFO - ==============================
+2026-03-14 15:45:36,735 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:45:36,735 - __main__ - INFO - ==============================
+2026-03-14 15:45:36,735 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:45:36,737 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:45:36,840 - root - INFO - INIT: Registering the message handler...
+2026-03-14 15:45:36,840 - root - INFO - INIT: Initialization done!
+2026-03-14 15:45:37,445 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:45:37,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:45:37,645 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:45:48,262 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:45:58,472 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:08,679 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:18,887 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:29,094 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:32,657 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:32,660 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:46:32,660 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:46:35,167 - __main__ - INFO - Setting up environment...
+2026-03-14 15:46:35,168 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:46:35,168 - __main__ - INFO - Database initialized.
+2026-03-14 15:46:35,168 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:46:35,168 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:46:35,168 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:46:35,168 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:46:35,168 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:46:35,168 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:46:35,191 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 15:46:35,202 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 15:46:35,203 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 15:46:35,203 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 15:46:35,203 - __main__ - INFO - ==============================
+2026-03-14 15:46:35,203 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:46:35,203 - __main__ - INFO - ==============================
+2026-03-14 15:46:35,203 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:46:35,204 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:46:35,313 - root - INFO - INIT: Registering the message handler...
+2026-03-14 15:46:35,313 - root - INFO - INIT: Initialization done!
+2026-03-14 15:46:35,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:46:36,153 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:46:36,156 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:46:46,767 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:46:56,975 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:47:07,573 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:47:07,575 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:47:07,575 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:56:09,445 - __main__ - INFO - Setting up environment...
+2026-03-14 15:56:09,447 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:56:09,447 - __main__ - INFO - Database initialized.
+2026-03-14 15:56:09,447 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:56:09,447 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:56:09,448 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:56:09,448 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:56:09,448 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:56:09,448 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:56:09,467 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 15:56:09,477 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 15:56:09,477 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 15:56:09,477 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 15:56:09,477 - __main__ - INFO - ==============================
+2026-03-14 15:56:09,477 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:56:09,478 - __main__ - INFO - ==============================
+2026-03-14 15:56:09,478 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:56:09,480 - root - INFO - AI loaded 691 chars of job data.
+2026-03-14 15:56:09,480 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:56:09,570 - root - INFO - INIT: Registering handlers...
+2026-03-14 15:56:09,570 - root - INFO - INIT: Initialization done!
+2026-03-14 15:56:10,176 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:56:10,371 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:56:10,376 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:56:20,955 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:56:31,149 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:56:35,184 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:56:35,186 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:56:35,186 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:56:59,825 - __main__ - INFO - Setting up environment...
+2026-03-14 15:56:59,825 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:56:59,825 - __main__ - INFO - Database initialized.
+2026-03-14 15:56:59,826 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:56:59,826 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:56:59,826 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:56:59,826 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:56:59,826 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:56:59,826 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:56:59,843 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 15:56:59,854 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 15:56:59,854 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 15:56:59,855 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 15:56:59,855 - __main__ - INFO - ==============================
+2026-03-14 15:56:59,855 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:56:59,855 - __main__ - INFO - ==============================
+2026-03-14 15:56:59,855 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:56:59,857 - root - INFO - AI loaded 1029 chars of job data.
+2026-03-14 15:56:59,857 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:56:59,945 - root - INFO - INIT: Registering handlers...
+2026-03-14 15:56:59,945 - root - INFO - INIT: Initialization done!
+2026-03-14 15:57:00,500 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:57:00,681 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:57:00,685 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:57:04,592 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:57:04,593 - root - INFO - USER TEXT: “我是计算机专业的学生，想去北京工作，有什么推荐吗？”
+2026-03-14 15:57:04,963 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 15:57:06,435 - ChatGPT_HKBU - ERROR - API Request failed: 400 Client Error: Bad Request for url: https://genai.hkbu.edu.hk/api/v0/rest/deployments/gpt-5-mini/chat/completions?api-version=2024-12-01-preview
+2026-03-14 15:57:06,836 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 15:57:14,794 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:57:24,990 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:57:35,214 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:57:45,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:57:55,603 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:58:00,834 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:58:00,837 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:58:00,837 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 15:58:46,244 - __main__ - INFO - Setting up environment...
+2026-03-14 15:58:46,245 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 15:58:46,245 - __main__ - INFO - Database initialized.
+2026-03-14 15:58:46,245 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 15:58:46,245 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 15:58:46,246 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 15:58:46,246 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 15:58:46,246 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:58:46,246 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 15:58:46,262 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 15:58:46,273 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 15:58:46,273 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 15:58:46,273 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 15:58:46,273 - __main__ - INFO - ==============================
+2026-03-14 15:58:46,273 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 15:58:46,273 - __main__ - INFO - ==============================
+2026-03-14 15:58:46,273 - root - INFO - INIT: Loading configuration...
+2026-03-14 15:58:46,275 - root - INFO - AI loaded 1370 chars of job data.
+2026-03-14 15:58:46,275 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 15:58:46,359 - root - INFO - INIT: Registering handlers...
+2026-03-14 15:58:46,359 - root - INFO - INIT: Initialization done!
+2026-03-14 15:58:46,920 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 15:58:47,106 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 15:58:47,109 - telegram.ext.Application - INFO - Application started
+2026-03-14 15:58:57,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:59:00,244 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:59:00,246 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 15:59:01,041 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 15:59:02,445 - ChatGPT_HKBU - ERROR - API Request failed: 400 Client Error: Bad Request for url: https://genai.hkbu.edu.hk/api/v0/rest/deployments/gpt-5-mini/chat/completions?api-version=2024-12-01-preview
+2026-03-14 15:59:02,831 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 15:59:10,446 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:59:15,787 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 15:59:15,788 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 15:59:15,788 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 16:03:09,222 - __main__ - INFO - Setting up environment...
+2026-03-14 16:03:09,222 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 16:03:09,223 - __main__ - INFO - Database initialized.
+2026-03-14 16:03:09,223 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 16:03:09,223 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 16:03:09,223 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 16:03:09,223 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 16:03:09,223 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:03:09,223 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:03:09,240 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 16:03:09,251 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 16:03:09,251 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 16:03:09,251 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 16:03:09,251 - __main__ - INFO - ==============================
+2026-03-14 16:03:09,251 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 16:03:09,251 - __main__ - INFO - ==============================
+2026-03-14 16:03:09,251 - root - INFO - INIT: Loading configuration...
+2026-03-14 16:03:09,254 - root - INFO - AI loaded 1711 chars of job data.
+2026-03-14 16:03:09,254 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 16:03:09,340 - root - INFO - INIT: Registering handlers...
+2026-03-14 16:03:09,340 - root - INFO - INIT: Initialization done!
+2026-03-14 16:03:09,970 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 16:03:10,175 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 16:03:10,179 - telegram.ext.Application - INFO - Application started
+2026-03-14 16:03:16,135 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:03:16,137 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 16:03:16,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 16:03:18,322 - ChatGPT_HKBU - ERROR - API Request failed: 400 Client Error: Bad Request for url: https://genai.hkbu.edu.hk/api/v0/rest/deployments/gpt-5-mini/chat/completions?api-version=2024-12-01-preview
+2026-03-14 16:03:18,715 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 16:03:26,350 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:03:36,555 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:03:46,764 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:03:56,979 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:04:07,190 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:04:16,175 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:04:16,176 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 16:04:16,176 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 16:08:53,589 - __main__ - INFO - Setting up environment...
+2026-03-14 16:08:53,590 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 16:08:53,590 - __main__ - INFO - Database initialized.
+2026-03-14 16:08:53,590 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 16:08:53,590 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 16:08:53,590 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 16:08:53,590 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 16:08:53,590 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:08:53,591 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:08:53,607 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 16:08:53,618 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 16:08:53,618 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 16:08:53,618 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 16:08:53,618 - __main__ - INFO - ==============================
+2026-03-14 16:08:53,619 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 16:08:53,619 - __main__ - INFO - ==============================
+2026-03-14 16:08:53,619 - root - INFO - INIT: Loading configuration...
+2026-03-14 16:08:53,621 - root - INFO - AI loaded 2052 chars of job data.
+2026-03-14 16:08:53,621 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 16:08:53,712 - root - INFO - INIT: Registering handlers...
+2026-03-14 16:08:53,712 - root - INFO - INIT: Initialization done!
+2026-03-14 16:08:54,331 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 16:08:54,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 16:08:54,530 - telegram.ext.Application - INFO - Application started
+2026-03-14 16:09:03,757 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:03,759 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 16:09:04,492 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 16:09:05,647 - ChatGPT_HKBU - ERROR - API Error Detail: {'statusCode': 400, 'message': "Unsupported value: 'temperature' does not support 0.7 with this model. Only the default (1) value is supported."}
+2026-03-14 16:09:06,015 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 16:09:13,948 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:24,136 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:34,321 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:44,509 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:50,644 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:09:50,645 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 16:09:50,645 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 16:10:16,751 - __main__ - INFO - Setting up environment...
+2026-03-14 16:10:16,751 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 16:10:16,751 - __main__ - INFO - Database initialized.
+2026-03-14 16:10:16,752 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 16:10:16,752 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 16:10:16,752 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 16:10:16,752 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 16:10:16,752 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:10:16,752 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:10:16,770 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 16:10:16,788 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 16:10:16,789 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 16:10:16,789 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 16:10:16,789 - __main__ - INFO - ==============================
+2026-03-14 16:10:16,789 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 16:10:16,789 - __main__ - INFO - ==============================
+2026-03-14 16:10:16,789 - root - INFO - INIT: Loading configuration...
+2026-03-14 16:10:16,791 - root - INFO - AI loaded 2393 chars of job data.
+2026-03-14 16:10:16,791 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 16:10:16,884 - root - INFO - INIT: Registering handlers...
+2026-03-14 16:10:16,884 - root - INFO - INIT: Initialization done!
+2026-03-14 16:10:17,474 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 16:10:17,676 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 16:10:17,678 - telegram.ext.Application - INFO - Application started
+2026-03-14 16:10:23,699 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:10:23,701 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 16:10:24,476 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 16:10:33,471 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 16:10:33,904 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:10:44,101 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:10:52,806 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:10:52,807 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 16:10:52,807 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 16:12:42,609 - __main__ - INFO - Setting up environment...
+2026-03-14 16:12:42,610 - job_database - INFO - Database table 'jobs' initialized/verified.
+2026-03-14 16:12:42,610 - __main__ - INFO - Database initialized.
+2026-03-14 16:12:42,610 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 16:12:42,610 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 16:12:42,610 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 16:12:42,610 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 16:12:42,610 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:12:42,611 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:12:42,627 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 16:12:42,637 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 16:12:42,637 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 16:12:42,637 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 16:12:42,637 - __main__ - INFO - ==============================
+2026-03-14 16:12:42,637 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 16:12:42,637 - __main__ - INFO - ==============================
+2026-03-14 16:12:42,637 - root - INFO - INIT: Loading configuration...
+2026-03-14 16:12:42,640 - root - INFO - AI loaded 2739 chars of job data.
+2026-03-14 16:12:42,640 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 16:12:42,724 - root - INFO - INIT: Registering handlers...
+2026-03-14 16:12:42,724 - root - INFO - INIT: Initialization done!
+2026-03-14 16:12:43,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 16:12:43,712 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 16:12:43,715 - telegram.ext.Application - INFO - Application started
+2026-03-14 16:12:52,829 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:12:52,832 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 16:12:53,609 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 16:13:06,227 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:13:07,013 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 16:13:16,415 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:13:24,319 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:13:24,320 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 16:13:24,321 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 16:17:04,554 - __main__ - INFO - Setting up environment...
+2026-03-14 16:17:04,556 - job_database - INFO - Database table 'jobs' initialized and CLEARED for fresh import.
+2026-03-14 16:17:04,564 - __main__ - INFO - Database initialized.
+2026-03-14 16:17:04,564 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 16:17:04,564 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 16:17:04,564 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 16:17:04,565 - __main__ - INFO - ✅ Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 16:17:04,565 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:17:04,565 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 16:17:04,590 - job_database - INFO - Preprocessing done. 3 valid records found.
+2026-03-14 16:17:04,603 - job_database - INFO - Successfully inserted 3 jobs into database.
+2026-03-14 16:17:04,604 - __main__ - INFO - -> Imported 3 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 16:17:04,605 - __main__ - INFO - Total jobs imported in this session: 3
+2026-03-14 16:17:04,605 - __main__ - INFO - ==============================
+2026-03-14 16:17:04,605 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 16:17:04,605 - __main__ - INFO - ==============================
+2026-03-14 16:17:04,605 - root - INFO - INIT: Loading configuration...
+2026-03-14 16:17:04,609 - root - INFO - AI loaded 358 chars of job data.
+2026-03-14 16:17:04,609 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 16:17:04,737 - root - INFO - INIT: Registering handlers...
+2026-03-14 16:17:04,737 - root - INFO - INIT: Initialization done!
+2026-03-14 16:17:05,354 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 16:17:05,548 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 16:17:05,552 - telegram.ext.Application - INFO - Application started
+2026-03-14 16:17:16,139 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:17:16,333 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:17:16,335 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 16:17:17,096 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 16:17:25,892 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 16:17:26,533 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:17:36,728 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:17:46,922 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:17:57,117 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:18:07,310 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:18:11,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 16:18:11,589 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 16:18:11,589 - telegram.ext.Application - INFO - Application.stop() complete
