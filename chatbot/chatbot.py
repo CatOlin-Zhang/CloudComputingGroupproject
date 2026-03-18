@@ -8,9 +8,8 @@ from rag_engine import SimpleJobRAG
 from pdf_processor import extract_text_from_pdf
 import os
 import tempfile # 用于临时保存上传的文件
-import re
 
-
+import httpx
 gpt = None
 rag_engine = None
 
@@ -84,35 +83,37 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
     file_name = doc.file_name
     user_id = update.message.from_user.id
 
-    # 1. 基础校验
-    if not file_name.lower().endswith('.pdf'):
-        await update.message.reply_text("❌ 抱歉，目前仅支持 PDF 格式的简历。")
+    # 1. 格式预检
+    if not file_name.lower().endswith(('.pdf', '.doc', '.docx')):
+        await update.message.reply_text(" 仅支持 PDF 或 Word (.doc/.docx) 简历。")
         return
 
-    logging.info(f"USER FILE: {file_name} (User ID: {user_id})")
-
-    # 发送接收确认 (暂时不用 Markdown，防止文件名有特殊字符报错)
-    reply_text = f"收到文件：{file_name}\n正在解析简历内容并匹配职位，请稍候..."
-    loading_message = await update.message.reply_text(reply_text)
-
-    # 2. 准备临时文件路径
-    temp_filename = f"resume_{user_id}_{file_name}"
-    local_path = os.path.join(os.getcwd(), temp_filename)
-
+    loading_message = await update.message.reply_text("📥 正在下载并解析文件...")
+    local_path = None
     try:
-        # 获取文件对象
-        file_obj = await context.bot.get_file(doc.file_id)
+        # 2. 获取下载链接
+        file_obj = await doc.get_file()
+        file_url = file_obj.file_path
 
-        # 【关键修改】兼容旧版下载方法
-        # 尝试使用 download_to_custom (v13-v20 早期)，如果不行则用 download (v13 及更早)
-        if hasattr(file_obj, 'download_to_custom'):
-            await file_obj.download_to_custom(local_path)
-        elif hasattr(file_obj, 'download'):
-            # 旧版 download 方法通常直接接受路径字符串
-            await file_obj.download(custom_path=local_path)
-        else:
-            # 极老版本的回退方案
-            await file_obj.download_to_drive(local_path) if hasattr(file_obj, 'download_to_drive') else None
+        if not file_url:
+            raise Exception("无法获取文件下载链接。")
+        # 3. 创建临时文件路径
+        temp_dir = tempfile.gettempdir()
+        _, ext = os.path.splitext(file_name)
+        # 使用唯一文件名防止冲突
+        local_path = os.path.join(temp_dir, f"resume_{update.effective_user.id}_{update.message.message_id}{ext}")
+
+        logging.info(f"正在下载：{file_url} -> {local_path}")
+
+        # 4. 异步下载文件
+        async with httpx.AsyncClient() as client:
+            response = await client.get(file_url)
+            response.raise_for_status()
+            with open(local_path, 'wb') as f:
+                f.write(response.content)
+
+        logging.info(f"✅ 下载成功：{local_path}")
+        await loading_message.edit_text("正在提取文本 (可能包含 OCR)...")
 
         # 再次检查文件是否真的生成了
         if not os.path.exists(local_path):
@@ -125,15 +126,18 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # 3. 提取文本
         resume_text = extract_text_from_pdf(local_path)
 
-        if not resume_text or len(resume_text.strip()) < 50:
+        if not resume_text or len(resume_text.strip()) == 0:
             await loading_message.edit_text(
-                "解析失败\n\n无法从该 PDF 中提取有效文本。\n"
-                "可能原因：文件是扫描件/图片或已加密。\n"
-                "建议：请直接复制简历中的【技能】和【工作经验】文字发送给我。"
+                "**解析失败**\n\n"
+                "未能从文件中提取到任何文字。\n"
+                "可能原因：\n"
+                "1. 文件是纯图片且 OCR 无法识别\n"
+                "2. 文件已加密\n"
+                "3. 文件内容为空"
             )
             return
 
-        logging.info(f"PDF parsed successfully. Length: {len(resume_text)} chars.")
+        logging.info(f"File parsed successfully. Length: {len(resume_text)} chars.")
 
         # 4. 调用 RAG 引擎
         if rag_engine:
