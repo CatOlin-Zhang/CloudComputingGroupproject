@@ -459,3 +459,210 @@ KeyError: Index(['company_name'], dtype='str')
 2026-03-14 16:18:11,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
 2026-03-14 16:18:11,589 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
 2026-03-14 16:18:11,589 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-14 20:57:49,618 - __main__ - INFO - Setting up environment...
+2026-03-14 20:57:49,631 - job_database - INFO - Database table 'jobs' initialized and CLEARED for fresh import.
+2026-03-14 20:57:49,639 - __main__ - INFO - Database initialized.
+2026-03-14 20:57:49,639 - __main__ - INFO - Searching for Excel files in: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\chatbot', 'C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData']
+2026-03-14 20:57:49,639 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot
+2026-03-14 20:57:49,640 - __main__ - INFO - Checking path: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData
+2026-03-14 20:57:49,640 - __main__ - INFO - Found Excel files to process: ['C:\\Users\\阿根达斯\\PycharmProjects\\CloudComputingGroupproject\\JobData\\Jobdata.xlsx']
+2026-03-14 20:57:49,640 - __main__ - INFO - Processing C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 20:57:49,640 - job_database - INFO - Start loading jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx...
+2026-03-14 20:57:49,695 - job_database - INFO - Preprocessing done. 277 valid records found.
+2026-03-14 20:57:49,708 - job_database - INFO - Successfully inserted 277 jobs into database.
+2026-03-14 20:57:49,708 - __main__ - INFO - -> Imported 277 jobs from C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\JobData\Jobdata.xlsx.
+2026-03-14 20:57:49,709 - __main__ - INFO - Total jobs imported in this session: 277
+2026-03-14 20:57:49,709 - __main__ - INFO - ==============================
+2026-03-14 20:57:49,709 - __main__ - INFO - Starting Telegram Bot...
+2026-03-14 20:57:49,709 - __main__ - INFO - ==============================
+2026-03-14 20:57:49,709 - root - INFO - INIT: Loading configuration...
+2026-03-14 20:57:49,712 - ChatGPT_HKBU - WARNING - Job context truncated from 25431 to 3000 chars.
+2026-03-14 20:57:49,712 - root - INFO - AI loaded 25431 chars of job data.
+2026-03-14 20:57:49,712 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-14 20:57:49,851 - root - INFO - INIT: Registering handlers...
+2026-03-14 20:57:49,851 - root - INFO - INIT: Initialization done!
+2026-03-14 20:57:51,321 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getMe "HTTP/1.1 200 OK"
+2026-03-14 20:57:51,520 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/deleteWebhook "HTTP/1.1 200 OK"
+2026-03-14 20:57:51,523 - telegram.ext.Application - INFO - Application started
+2026-03-14 20:58:02,120 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 20:58:06,019 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 20:58:06,021 - root - INFO - USER TEXT: 我是计算机专业的学生，想去北京工作，有什么推荐吗
+2026-03-14 20:58:06,779 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/sendMessage "HTTP/1.1 200 OK"
+2026-03-14 20:58:06,783 - ChatGPT_HKBU - WARNING - Job context truncated from 25431 to 3000 chars.
+2026-03-14 20:58:21,840 - ChatGPT_HKBU - ERROR - API Request failed: HTTPSConnectionPool(host='genai.hkbu.edu.hk', port=443): Read timed out. (read timeout=15)
+2026-03-14 20:58:21,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 20:58:22,629 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/editMessageText "HTTP/1.1 200 OK"
+2026-03-14 20:58:32,049 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 20:58:37,004 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8481954135:AAFg94xyFVeGdkWWnUWUC8z91TZ1GbfrOoU/getUpdates "HTTP/1.1 200 OK"
+2026-03-14 20:58:37,006 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-03-14 20:58:37,006 - telegram.ext.Application - INFO - Application.stop() complete
+2026-03-15 13:07:10,167 - __main__ - INFO - Setting up environment...
+2026-03-15 13:07:10,178 - job_database - ERROR - Error initializing database: database disk image is malformed
+2026-03-15 13:07:10,178 - __main__ - ERROR - Fatal error: database disk image is malformed
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 85, in main
+    setup_environment()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 26, in setup_environment
+    init_database()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 50, in init_database
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 41, in init_database
+    cursor.execute(create_table_sql)
+sqlite3.DatabaseError: database disk image is malformed
+2026-03-15 13:07:47,600 - __main__ - INFO - Setting up environment...
+2026-03-15 13:07:47,601 - job_database - ERROR - Error initializing database: database disk image is malformed
+2026-03-15 13:07:47,601 - __main__ - ERROR - Fatal error: database disk image is malformed
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 85, in main
+    setup_environment()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 26, in setup_environment
+    init_database()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 50, in init_database
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 41, in init_database
+    cursor.execute(create_table_sql)
+sqlite3.DatabaseError: database disk image is malformed
+2026-03-15 13:08:36,576 - __main__ - INFO - Setting up environment...
+2026-03-15 13:08:36,576 - job_database - ERROR - Error initializing database: database disk image is malformed
+2026-03-15 13:08:36,577 - __main__ - ERROR - Fatal error: database disk image is malformed
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 85, in main
+    setup_environment()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 26, in setup_environment
+    init_database()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 50, in init_database
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 41, in init_database
+    cursor.execute(create_table_sql)
+sqlite3.DatabaseError: database disk image is malformed
+2026-03-16 14:25:52,404 - __main__ - INFO - Setting up environment...
+2026-03-16 14:25:52,415 - job_database - ERROR - Error initializing database: database disk image is malformed
+2026-03-16 14:25:52,415 - __main__ - ERROR - Fatal error: database disk image is malformed
+Traceback (most recent call last):
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 85, in main
+    setup_environment()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\main.py", line 26, in setup_environment
+    init_database()
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 50, in init_database
+    raise e
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\job_database.py", line 41, in init_database
+    cursor.execute(create_table_sql)
+sqlite3.DatabaseError: database disk image is malformed
+2026-03-18 15:11:37 - root - INFO - Logger initialized. Logs saved to: C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\bot.log
+2026-03-18 15:11:37 - root - INFO - INIT: Loading configuration...
+2026-03-18 15:11:37 - rag_engine - INFO - Loaded 277 jobs from Excel.
+2026-03-18 15:11:37 - rag_engine - INFO - TF-IDF Indexing complete.
+2026-03-18 15:11:37 - root - INFO - RAG Engine initialized successfully.
+2026-03-18 15:11:37 - root - INFO - INIT: Connecting the Telegram bot...
+2026-03-18 15:11:37 - root - INFO - INIT: Registering handlers...
+2026-03-18 15:11:37 - root - INFO - INIT: Initialization done! Start polling...
+2026-03-18 15:13:01 - root - INFO - USER TEXT: 想去北京工作，有什么推荐吗
+2026-03-18 15:13:02 - root - INFO - RAG found 3 relevant jobs.
+2026-03-18 15:13:35 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\ext\_application.py", line 1315, in process_update
+    await coroutine
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\ext\_handlers\basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\阿根达斯\PycharmProjects\CloudComputingGroupproject\chatbot\chatbot.py", line 80, in handle_text
+    await loading_message.edit_text(response)
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\_message.py", line 4205, in edit_text
+    return await self.get_bot().edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\ext\_extbot.py", line 1732, in edit_message_text
+    return await super().edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\_bot.py", line 4543, in edit_message_text
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\ext\_extbot.py", line 629, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\_bot.py", line 819, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\ext\_extbot.py", line 369, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ANACONDA\envs\couldcomputing\Lib\site-packages\telegram\request\_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
