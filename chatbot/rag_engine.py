@@ -35,22 +35,21 @@ class SimpleJobRAG:
 
         for _, row in self.df.iterrows():
             # 构建检索文本 (用于计算相似度)
-            search_text = f"{row.get('公司名称', '')} {row.get('岗位', '')} {row.get('工作城市', '')} {row.get('学历', '')} {row.get('备注', '')} {row.get('企业类型', '')}"
+            search_text = f"{row.get('Company Name', '')} {row.get('Position', '')} {row.get('Work City', '')} {row.get('Education', '')} {row.get('Remarks', '')} {row.get('Company Type', '')}"
             self.job_texts.append(search_text)
 
             # 构建详细上下文 (用于发送给 LLM)
             detail_parts = [
-                f"[职位] {row.get('岗位', 'N/A')}",
-                f"[公司] {row.get('公司名称', 'N/A')} ({row.get('企业类型', 'N/A')})",
-                f"[地点] {row.get('工作城市', 'N/A')}",
-                f"[截止] {row.get('截止时间', 'N/A')}",
-                f"[学历] {row.get('学历', 'N/A')}",
-                f"[笔试] {'免笔试' if str(row.get('含免笔试', '否')) == '是' else '需笔试'}",
+                f"[Position] {row.get('Position', 'N/A')}",
+                f"[Company] {row.get('Company Name', 'N/A')} ({row.get('Company Type', 'N/A')})",
+                f"[Work City] {row.get('Work City', 'N/A')}",
+                f"[Deadline] {row.get('Deadline', 'N/A')}",
+                f"[Education] {row.get('Education', 'N/A')}",
             ]
 
             if RAGConfig.INCLUDE_METADATA_IN_CONTEXT:
-                detail_parts.append(f"[链接] {row.get('官方公告', row.get('网申入口', '无'))}")
-                detail_parts.append(f"[备注] {row.get('备注', '')}")
+                detail_parts.append(f"[Link] {row.get('Link', row.get('Apply', '无'))}")
+                detail_parts.append(f"[Remarks] {row.get('Remarks', '')}")
 
             self.job_details.append("\n".join(detail_parts))
 
@@ -73,7 +72,7 @@ class SimpleJobRAG:
             top_k = RAGConfig.TOP_K
 
         if self.vectorizer is None or self.tfidf_matrix is None:
-            return ["暂无职位数据。"]
+            return ["No job data available."]
 
         query_vec = self.vectorizer.transform([query])
         similarities = cosine_similarity(query_vec, self.tfidf_matrix).flatten()
@@ -92,7 +91,7 @@ class SimpleJobRAG:
                     # 如果连第一个都没达到阈值
                     logger.info(
                         f"No matches found above threshold {threshold}. Max similarity: {similarities[idx]:.4f}")
-                    return ["未在数据库中找到与该描述高度匹配的职位。"]
+                    return ["No positions highly matching this description were found in the database."]
                 break
 
-        return results if results else ["未找到相关职位信息。"]
+        return results if results else ["No relevant job information found."]
