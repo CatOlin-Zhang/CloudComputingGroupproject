@@ -20,7 +20,6 @@ print(f" [Config Debug] Looking for Excel path: {EXCEL_FILE_PATH}")
 
 if not EXCEL_FILE_PATH.exists():
     print(f" [Config Error] File does not exist! Please check the path or filename case.")
-    # List all files in JobData directory to check for typos
     job_data_dir = PROJECT_ROOT / "JobData"
     if job_data_dir.exists():
         print(f" [Config Debug] Files in JobData directory: {os.listdir(job_data_dir)}")
@@ -30,13 +29,23 @@ else:
     print(f" [Config Success] Excel file found!")
 
 
-# --- 2. RAG Retrieval Strategy Configuration ---
+# --- 2. RAG Retrieval Strategy Configuration  ---
 class RAGConfig:
-    TOP_K = 3  # Max number of results to return
-    SIMILARITY_THRESHOLD = 0.05 # Minimum similarity score
-    NGRAM_RANGE = (2, 4)
-    MAX_FEATURES = 5000
+    # model can be used
+    # 1. 'BAAI/bge-small-zh-v1.5'
+    # 2. 'BAAI/bge-base-zh-v1.5'
+    # 3. 'moka-ai/m3e-base'
+    EMBEDDING_MODEL_NAME = "BAAI/bge-small-zh-v1.5"
+
+    TOP_K = 3  # Recall volume, determines the maximum number of results returned
+
+    SIMILARITY_THRESHOLD = 0.5  #Similarity threshold, values below this will not be recalled
+
     INCLUDE_METADATA_IN_CONTEXT = True
+
+    # TF-IDF function wasted
+    # NGRAM_RANGE = (2, 4)
+    # MAX_FEATURES = 5000
 
 
 # --- 3. LLM / API Behavior Configuration ---
@@ -59,15 +68,15 @@ class LLMConfig:
     --- End of Data ---
     """
 
-    TEMPERATURE = 1
+    TEMPERATURE = 1  # API force to be 1
     MAX_TOKENS = 800
     TOP_P = 0.9
-    TIMEOUT = 40
+    TIMEOUT = 45     # Time for response
 
 
 # --- 4. Telegram Bot Configuration ---
 class BotConfig:
-    LOADING_TEXT = " Retrieving job database and analyzing..."
+    LOADING_TEXT = "  Analyzing semantic meaning in job database..."
     FILE_RECEIVED_TEXT = " Received resume `{file_name}`. The system currently does not support direct file parsing. Please directly tell me your **major, target city, and expected position**, and I will match them for you precisely."
 
 

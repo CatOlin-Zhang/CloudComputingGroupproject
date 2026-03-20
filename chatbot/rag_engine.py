@@ -1,9 +1,8 @@
-# rag_engine.py
 import pandas as pd
 import os
 import logging
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+import torch
+from sentence_transformers import SentenceTransformer, util
 from config import RAGConfig, EXCEL_FILE_PATH
 
 logger = logging.getLogger(__name__)
@@ -11,11 +10,10 @@ logger = logging.getLogger(__name__)
 
 class SimpleJobRAG:
     def __init__(self, excel_path=None):
-        # 优先使用传入路径，否则使用 config 中的默认路径
         self.excel_path = excel_path if excel_path else EXCEL_FILE_PATH
         self.df = None
-        self.vectorizer = None
-        self.tfidf_matrix = None
+        self.model = None
+        self.job_embeddings = None
         self.job_texts = []
         self.job_details = []
 
@@ -33,12 +31,11 @@ class SimpleJobRAG:
             logger.error(f"Failed to load Excel: {e}")
             return
 
+        # 1. Build retrieval text and detailed context
         for _, row in self.df.iterrows():
-            # 构建检索文本 (用于计算相似度)
             search_text = f"{row.get('Company Name', '')} {row.get('Position', '')} {row.get('Work City', '')} {row.get('Education', '')} {row.get('Remarks', '')} {row.get('Company Type', '')}"
             self.job_texts.append(search_text)
 
-            # 构建详细上下文 (用于发送给 LLM)
             detail_parts = [
                 f"[Position] {row.get('Position', 'N/A')}",
                 f"[Company] {row.get('Company Name', 'N/A')} ({row.get('Company Type', 'N/A')})",
@@ -53,45 +50,81 @@ class SimpleJobRAG:
 
             self.job_details.append("\n".join(detail_parts))
 
-        # 使用 config 中的参数初始化向量器
+        # 2. Initialize the model
         try:
-            self.vectorizer = TfidfVectorizer(
-                analyzer='char_wb',
-                ngram_range=RAGConfig.NGRAM_RANGE,
-                max_features=RAGConfig.MAX_FEATURES
-            )
+            model_name = getattr(RAGConfig, 'EMBEDDING_MODEL_NAME', 'BAAI/bge-small-zh-v1.5')
+            logger.info(f"Loading Neural Search model: {model_name} ...")
+            self.model = SentenceTransformer(model_name)
 
             if self.job_texts:
-                self.tfidf_matrix = self.vectorizer.fit_transform(self.job_texts)
-                logger.info("TF-IDF Indexing complete.")
+                logger.info("Encoding job descriptions into vectors...")
+                self.job_embeddings = self.model.encode(
+                    self.job_texts,
+                    batch_size=32,
+                    show_progress_bar=True,
+                    convert_to_tensor=True
+                )
+                logger.info(f"Neural Indexing complete. Vector shape: {self.job_embeddings.shape}")
         except Exception as e:
-            logger.error(f"TF-IDF initialization failed: {e}")
+            logger.error(f"Neural Search initialization failed: {e}")
+            raise e
 
     def search(self, query: str, top_k=None):
         if top_k is None:
             top_k = RAGConfig.TOP_K
 
-        if self.vectorizer is None or self.tfidf_matrix is None:
+        if self.model is None or self.job_embeddings is None:
             return ["No job data available."]
 
-        query_vec = self.vectorizer.transform([query])
-        similarities = cosine_similarity(query_vec, self.tfidf_matrix).flatten()
+        try:
+            # 1. Code Lookup
+            query_embedding = self.model.encode(query, convert_to_tensor=True)
 
-        top_indices = similarities.argsort()[-top_k:][::-1]
+            # 2. Calculate cosine similarity
+            # cos_scores  [1, num_jobs]
+            cos_scores = util.cos_sim(query_embedding, self.job_embeddings)[0]
 
-        results = []
-        threshold = RAGConfig.SIMILARITY_THRESHOLD
 
-        for idx in top_indices:
-            if similarities[idx] >= threshold:
-                results.append(self.job_details[idx])
-            else:
-                # 如果当前索引的相似度已经低于阈值，后续的肯定也低于，可以提前停止
-                if not results:
-                    # 如果连第一个都没达到阈值
-                    logger.info(
-                        f"No matches found above threshold {threshold}. Max similarity: {similarities[idx]:.4f}")
-                    return ["No positions highly matching this description were found in the database."]
-                break
+            k = min(top_k, len(cos_scores))
 
-        return results if results else ["No relevant job information found."]
+            # # torch.topk returns (values, indices), sorted in descending order
+            top_results = torch.topk(cos_scores, k=k)
+
+            scores = top_results[0].cpu().numpy()
+            indices = top_results[1].cpu().numpy()
+
+            results = []
+            threshold = RAGConfig.SIMILARITY_THRESHOLD
+
+            # Used for debug logs
+            max_score = scores[0] if len(scores) > 0 else 0
+            logger.info(f"Query: '{query}' | Max Similarity Score: {max_score:.4f}")
+
+            for i, idx in enumerate(indices):
+                score = scores[i]
+
+                # Strategy A: Strict Match (Above Threshold)
+                if score >= threshold:
+                    results.append(self.job_details[idx])
+                else:
+                    # If the current score is lower than the threshold, since it is in descending order, the following ones will definitely be lower
+                    # If the result is empty, try to return the best one
+                    if not results and score > 0.4:
+                        logger.warning(
+                            f"No strict matches (>={threshold}), but found a potential match with score {score:.4f}. Returning best effort.")
+                        results.append(self.job_details[idx])
+                        break
+                    elif not results:
+                        logger.info(f"No matches found above threshold {threshold} or fallback limit (0.4).")
+                        return [
+                            "No positions highly matching this description were found in the database. Suggest trying specific keywords like 'Java', 'Beijing', or company names."]
+                    break
+
+            if not results:
+                return ["No relevant job information found."]
+
+            return results
+
+        except Exception as e:
+            logger.error(f"Search failed: {e}", exc_info=True)
+            return ["Error occurred during neural search."]

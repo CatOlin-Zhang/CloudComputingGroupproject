@@ -1,4 +1,3 @@
-# chatbot.py
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 import logging
@@ -7,8 +6,7 @@ from ChatGPT_HKBU import ChatGPT
 from rag_engine import SimpleJobRAG
 from pdf_processor import extract_text_from_pdf
 import os
-import tempfile # 用于临时保存上传的文件
-
+import tempfile
 import httpx
 gpt = None
 rag_engine = None
@@ -27,10 +25,10 @@ def main():
 
     global gpt, rag_engine
 
-    # 1. 初始化 LLM (不再需要传入 config 对象，类内部会自动加载)
+    # 1. Initialize LLM
     gpt = ChatGPT()
 
-    # 2. 初始化 RAG 引擎 (使用 config 中的默认路径)
+    # 2. Initialize RAG engine
     try:
         rag_engine = SimpleJobRAG()
         logging.info("RAG Engine initialized successfully.")
@@ -77,7 +75,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    处理用户上传的 PDF 简历 (兼容旧版 python-telegram-bot)
+    Process user-uploaded PDF resumes
     """
     doc = update.message.document
     file_name = doc.file_name
@@ -88,7 +86,7 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Only PDF or Word (.doc/.docx) resumes are supported.")
         return
 
-    loading_message = await update.message.reply_text("📥 Downloading and parsing file...")
+    loading_message = await update.message.reply_text("Downloading and parsing file...")
     local_path = None
     try:
         # 2. Get download link
@@ -113,7 +111,7 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
             with open(local_path, 'wb') as f:
                 f.write(response.content)
 
-        logging.info(f"✅ Download successful: {local_path}")
+        logging.info(f"Download successful: {local_path}")
         await loading_message.edit_text("Extracting text (OCR may be involved)...")
 
         # Check again if the file was actually generated

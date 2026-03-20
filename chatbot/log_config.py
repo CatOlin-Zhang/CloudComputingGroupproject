@@ -1,8 +1,7 @@
-# log_config.py
+# 日志配置函数已弃置
 import logging
 import os
 import sys
-
 
 def setup_logger(log_filename="bot.log"):
     """
