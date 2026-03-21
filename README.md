@@ -8,7 +8,7 @@ An intelligent job-seeking assistant chatbot based on **Telegram** and **LLM**. 
 ![LLM](https://img.shields.io/badge/LLM-OpenAI_Compatible-green)
 ![Deployment](https://img.shields.io/badge/Deploy-GitHub_Actions-black?logo=github-actions)
 
-## 项目目录
+## Project Directory
 
     AI Career Assistant Chatbot on telegram/
     ├── .github/
