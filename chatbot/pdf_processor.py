@@ -9,7 +9,6 @@ def extract_text_from_pdf(file_path: str) -> str:
     """
     Extract plain text content from a PDF file.
 
-
     file_path: Local path of the PDF file
 
     The complete extracted text string. Returns an empty string if it fails.

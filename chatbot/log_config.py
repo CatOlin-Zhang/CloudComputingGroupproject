@@ -52,7 +52,7 @@ def setup_logger(log_filename="bot.log"):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-    # 【可选】降低第三方库噪音 (httpx, telegram 等)，只让它们报告错误，避免 log 文件太大
+    # 降低第三方库噪音 (httpx, telegram 等)
     logging.getLogger('httpx').setLevel(logging.WARNING)
     logging.getLogger('telegram').setLevel(logging.WARNING)
     logging.getLogger('urllib3').setLevel(logging.WARNING)
@@ -62,8 +62,6 @@ def setup_logger(log_filename="bot.log"):
 
     return logger
 
-
-# 如果直接运行这个文件，也可以测试一下
 if __name__ == "__main__":
     setup_logger()
     logging.info("测试：这是一条普通信息")
