@@ -51,6 +51,12 @@ An intelligent job-seeking assistant chatbot based on **Telegram** and **LLM**. 
     * **No-Code Update**: Simply update the Excel file and restart the bot to sync the latest data.
     * Supports loading job data directly from an Excel file (`Jobdata.xlsx`).
 
+## ChatBot Command
+To make navigation seamless, the bot supports the following commands:
+* **(`/start`) - Displays the onboarding welcome message and usage guide.**
+* **(`/job`) - Switches to Job Search Mode (Default). Use this to search the database or upload resumes.**
+* **(`/skill`) - Switches to Skill Inquiry Mode. Use this to directly ask about the required skills for any specific profession.**
+
 ## Quick Start
 
 This project can run without a high-performance GPU. What you need is a computer that can connect to the Internet, a Telegram bot access token, and a Gen AI API.
