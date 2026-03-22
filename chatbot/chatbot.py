@@ -1,5 +1,5 @@
 from telegram import Update
-from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import logging
 from config import load_secrets, BotConfig
 from ChatGPT_HKBU import ChatGPT
@@ -7,8 +7,30 @@ from rag_engine import SimpleJobRAG
 from pdf_processor import extract_text_from_pdf
 import os
 import tempfile
+import asyncio
 import httpx
+
+# ──────────────────────────────────────────────
+# Mode Constants
+# ──────────────────────────────────────────────
+MODE_JOB = 'job'
+MODE_SKILL = 'skill'
+
+# ──────────────────────────────────────────────
+# System Prompt for Skill Inquiry mode
+# (used to override the second ChatGPT instance)
+# ──────────────────────────────────────────────
+SKILLS_SYSTEM_PROMPT = """
+You are a Senior HR Director and Technical Expert with over 10 years of experience recruiting for top-tier foreign enterprises and multinational corporations.
+When a user asks about a specific job position, directly provide the required skills for that role.
+
+Please strictly format your output as follows:
+**[Must-Have Skills]**
+- (List the core hard skills and technical proficiencies)
+"""
+
 gpt = None
+gpt_skill = None
 rag_engine = None
 
 
@@ -23,10 +45,14 @@ def main():
         logging.error(e)
         return
 
-    global gpt, rag_engine
+    global gpt, gpt_skill, rag_engine
 
-    # 1. Initialize LLM
+    # 1. Initialize LLM – Job mode (uses default system prompt from config)
     gpt = ChatGPT()
+
+    # 1b. Initialize LLM – Skill mode (override system prompt, same API credentials)
+    gpt_skill = ChatGPT()
+    gpt_skill.base_system_template = SKILLS_SYSTEM_PROMPT
 
     # 2. Initialize RAG engine
     try:
@@ -41,6 +67,12 @@ def main():
 
     logging.info('INIT: Registering handlers...')
 
+    # Command handlers
+    app.add_handler(CommandHandler("start", start_command))
+    app.add_handler(CommandHandler("job", job_command))
+    app.add_handler(CommandHandler("skill", skill_command))
+
+    # Message handlers
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
     app.add_handler(MessageHandler(filters.Document.ALL, handle_document))
 
@@ -48,29 +80,85 @@ def main():
     app.run_polling()
 
 
+# ──────────────────────────────────────────────
+# Command Handlers: /start  /job  /skill
+# ──────────────────────────────────────────────
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Send a message when the command /start is issued."""
+    # Reset to default mode on start
+    context.user_data['mode'] = MODE_JOB
+
+    welcome_message = (
+        "**Welcome to the AI Career Assistant!**\n\n"
+        "I am here to help you navigate your career path. I operate in two distinct modes:\n\n"
+        "**1. Job Search Mode (Default)**\n"
+        "• **Command:** `/job`\n"
+        "• **How it works:** Send me your target city, desired role, or upload your PDF/Word resume. "
+        "I will match you with the best available positions in our database.\n\n"
+        "**2. Skill Inquiry Mode**\n"
+        "• **Command:** `/skill`\n"
+        "• **How it works:** Tell me a specific job title (e.g., 'Data Analyst' or 'Product Manager'), "
+        "and I will act as a Senior HR to outline the Must-Have Skills and Bonus Points for that role.\n\n"
+        "**To begin, simply tap or type `/job` or `/skill`!**"
+    )
+
+    await update.message.reply_text(welcome_message, parse_mode='Markdown')
+
+
+async def job_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Switch to Job Search mode."""
+    context.user_data['mode'] = MODE_JOB
+    await update.message.reply_text(
+        "Switched to [Job Search] mode. "
+        "Please send your job requirements or upload your resume, "
+        "and I will match you with the best positions in our database."
+    )
+
+
+async def skill_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Switch to Skill Inquiry mode."""
+    context.user_data['mode'] = MODE_SKILL
+    await update.message.reply_text(
+        "Switched to [Skill Inquiry] mode. "
+        "Please tell me the job title you are interested in "
+        "(e.g., 'Python Developer'), and I will outline the required skills."
+    )
+
+
+# ──────────────────────────────────────────────
+# Text Handler (routes by current mode)
+# ──────────────────────────────────────────────
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text
-    logging.info(f"USER TEXT: {user_text}")
+    current_mode = context.user_data.get('mode', MODE_JOB)
+    logging.info(f"USER TEXT: {user_text} | MODE: {current_mode}")
 
-    loading_message = await update.message.reply_text(BotConfig.LOADING_TEXT)
-
-    relevant_jobs_context = ""
-
-    if rag_engine:
-        hits = rag_engine.search(user_text)
-        if hits and "Not found" not in hits[0]:
-            relevant_jobs_context = "\n\n---\n\n".join(hits)
-            logging.info(f"RAG found {len(hits)} relevant jobs.")
-        else:
-            logging.info("RAG found no relevant jobs.")
-            relevant_jobs_context = "No matching jobs found in database."
+    if current_mode == MODE_SKILL:
+        # ── Skill Inquiry path ──
+        loading_message = await update.message.reply_text("🔍 Analyzing skill requirements…")
+        response = await asyncio.to_thread(gpt_skill.submit, user_text)
+        await loading_message.edit_text(response)
     else:
-        relevant_jobs_context = "Job database not loaded."
+        # ── Job Search path (default) ──
+        loading_message = await update.message.reply_text(BotConfig.LOADING_TEXT)
 
-    gpt.set_job_context(relevant_jobs_context)
-    response = gpt.submit(user_text)
+        relevant_jobs_context = ""
 
-    await loading_message.edit_text(response)
+        if rag_engine:
+            hits = rag_engine.search(user_text)
+            if hits and "Not found" not in hits[0]:
+                relevant_jobs_context = "\n\n---\n\n".join(hits)
+                logging.info(f"RAG found {len(hits)} relevant jobs.")
+            else:
+                logging.info("RAG found no relevant jobs.")
+                relevant_jobs_context = "No matching jobs found in database."
+        else:
+            relevant_jobs_context = "Job database not loaded."
+
+        gpt.set_job_context(relevant_jobs_context)
+        response = await asyncio.to_thread(gpt.submit, user_text)
+
+        await loading_message.edit_text(response)
 
 
 async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
