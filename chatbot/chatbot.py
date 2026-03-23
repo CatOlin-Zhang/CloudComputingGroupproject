@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import logging
-from config import load_secrets, BotConfig
+from config import load_secrets, BotConfig, SKILLS_SYSTEM_PROMPT
 from ChatGPT_HKBU import ChatGPT
 from rag_engine import SimpleJobRAG
 from pdf_processor import extract_text_from_pdf
@@ -9,7 +9,6 @@ import os
 import tempfile
 import asyncio
 import httpx
-
 # ──────────────────────────────────────────────
 # Mode Constants
 # ──────────────────────────────────────────────
@@ -20,14 +19,15 @@ MODE_SKILL = 'skill'
 # System Prompt for Skill Inquiry mode
 # (used to override the second ChatGPT instance)
 # ──────────────────────────────────────────────
-SKILLS_SYSTEM_PROMPT = """
-You are a Senior HR Director and Technical Expert with over 10 years of experience recruiting for top-tier foreign enterprises and multinational corporations.
-When a user asks about a specific job position, directly provide the required skills for that role.
 
-Please strictly format your output as follows:
-**[Must-Have Skills]**
-- (List the core hard skills and technical proficiencies)
-"""
+#SKILLS_SYSTEM_PROMPT = """
+#You are a Senior HR Director and Technical Expert with over 10 years of experience recruiting for top-tier foreign enterprises and multinational corporations.
+#When a user asks about a specific job position, directly provide the required skills for that role.
+
+#Please strictly format your output as follows:
+#**[Must-Have Skills]**
+#- (List the core hard skills and technical proficiencies)
+#"""
 
 gpt = None
 gpt_skill = None
@@ -135,7 +135,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if current_mode == MODE_SKILL:
         # ── Skill Inquiry path ──
-        loading_message = await update.message.reply_text("🔍 Analyzing skill requirements…")
+        loading_message = await update.message.reply_text("Analyzing skill requirements…")
         response = await asyncio.to_thread(gpt_skill.submit, user_text)
         await loading_message.edit_text(response)
     else:
