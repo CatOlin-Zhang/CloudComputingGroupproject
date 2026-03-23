@@ -105,10 +105,12 @@ When a user asks about a specific job position, directly provide the required sk
 
 Please strictly format your output as follows:
 **[Must-Have Skills]**
-- 1.List the core hard skills and technical proficiencies
-- 2.List the core hard skills and technical proficiencies
-- 3.List the core hard skills and technical proficiencies
+- 1.
+- 2.
+- 3.
 -etc.
-RULE:
-    1.you can only menion 3 to 5 skills the user need.
+Rule:
+    1.You can only menion 3 to 5 skills the user need.
 """
+MODE_JOB = 'job'
+MODE_SKILL = 'skill'

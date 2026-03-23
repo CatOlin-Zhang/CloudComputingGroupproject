@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import logging
-from config import load_secrets, BotConfig, SKILLS_SYSTEM_PROMPT
+from config import load_secrets, BotConfig, SKILLS_SYSTEM_PROMPT, MODE_JOB, MODE_SKILL
 from ChatGPT_HKBU import ChatGPT
 from rag_engine import SimpleJobRAG
 from pdf_processor import extract_text_from_pdf
@@ -9,25 +9,6 @@ import os
 import tempfile
 import asyncio
 import httpx
-# ──────────────────────────────────────────────
-# Mode Constants
-# ──────────────────────────────────────────────
-MODE_JOB = 'job'
-MODE_SKILL = 'skill'
-
-# ──────────────────────────────────────────────
-# System Prompt for Skill Inquiry mode
-# (used to override the second ChatGPT instance)
-# ──────────────────────────────────────────────
-
-#SKILLS_SYSTEM_PROMPT = """
-#You are a Senior HR Director and Technical Expert with over 10 years of experience recruiting for top-tier foreign enterprises and multinational corporations.
-#When a user asks about a specific job position, directly provide the required skills for that role.
-
-#Please strictly format your output as follows:
-#**[Must-Have Skills]**
-#- (List the core hard skills and technical proficiencies)
-#"""
 
 gpt = None
 gpt_skill = None
@@ -79,10 +60,7 @@ def main():
     logging.info('INIT: Initialization done! Start polling...')
     app.run_polling()
 
-
-# ──────────────────────────────────────────────
 # Command Handlers: /start  /job  /skill
-# ──────────────────────────────────────────────
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Send a message when the command /start is issued."""
     # Reset to default mode on start
@@ -125,21 +103,19 @@ async def skill_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-# ──────────────────────────────────────────────
-# Text Handler (routes by current mode)
-# ──────────────────────────────────────────────
+# Text Handler
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text
     current_mode = context.user_data.get('mode', MODE_JOB)
     logging.info(f"USER TEXT: {user_text} | MODE: {current_mode}")
 
     if current_mode == MODE_SKILL:
-        # ── Skill Inquiry path ──
+
         loading_message = await update.message.reply_text("Analyzing skill requirements…")
         response = await asyncio.to_thread(gpt_skill.submit, user_text)
         await loading_message.edit_text(response)
     else:
-        # ── Job Search path (default) ──
+
         loading_message = await update.message.reply_text(BotConfig.LOADING_TEXT)
 
         relevant_jobs_context = ""
@@ -204,8 +180,7 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         # Check again if the file was actually generated
         if not os.path.exists(local_path):
-            # If the above method fails to generate the file, try the raw download (no params, save to current dir)
-            # Note: This might save as a file named with file_id, requiring renaming. Trying with params first here.
+
             raise FileNotFoundError("Download method failed to create file.")
 
         logging.info(f"File downloaded successfully to: {local_path}")

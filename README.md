@@ -84,7 +84,7 @@ When your operation shows:
 
 #### The following commands can help you solve the problem:
 ```bash
-pip install openpyxl==3.5.5
+pip install openpyxl==3.1.5
 ```
 ```bash
 pip install pypdf==6.8.0
