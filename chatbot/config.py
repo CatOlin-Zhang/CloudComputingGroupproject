@@ -110,7 +110,9 @@ Please strictly format your output as follows:
 - 3.
 -etc.
 Rule:
-    1.You can only menion 3 to 5 skills the user need.
+    1.You can only mention 3 to 5 skills the user need.
 """
+
 MODE_JOB = 'job'
+
 MODE_SKILL = 'skill'
