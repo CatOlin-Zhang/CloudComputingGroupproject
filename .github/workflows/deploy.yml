@@ -18,20 +18,22 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.EC2_PRIVATE_KEY }}
 
-      - name: Install Rsync (Fix for Exit Code 12)
-        run: sudo apt-get update && sudo apt-get install -y rsync
-
-      - name: Deploy application via Rsync
+      - name: Deploy via SCP
         run: |
-          # 将本地的 chatbot 文件夹同步到服务器的 chatbot_comp7940/chatbot 目录
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./chatbot/ root@43.99.17.139:~/chatbot_comp7940/chatbot/
+          # 1. 在服务器上创建目标目录（如果不存在）
+          ssh -o StrictHostKeyChecking=no root@43.99.17.139 "mkdir -p ~/chatbot_comp7940/chatbot"
 
-          # 在服务器上重启应用
+          # 2. 使用 SCP 上传文件
+          # -r: 递归上传整个文件夹
+          # -o StrictHostKeyChecking=no: 跳过首次连接的主机密钥确认
+          scp -r -o StrictHostKeyChecking=no ./chatbot/* root@43.99.17.139:~/chatbot_comp7940/chatbot/
+
+          # 3. 在服务器上重启应用
           ssh -o StrictHostKeyChecking=no root@43.99.17.139 << 'EOF'
           cd ~/chatbot_comp7940/chatbot
           # 杀掉旧进程
           pkill -f "python chatbot.py" || true
-          # 启动新进程 (后台运行，日志输出到 app.log)
+          # 启动新进程
           nohup ../venv/bin/python chatbot.py > ../app.log 2>&1 &
-          echo "Deployment finished and bot restarted."
+          echo "Deployment finished."
           EOF
