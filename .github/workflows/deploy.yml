@@ -16,16 +16,27 @@ jobs:
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
-          # 请确保在 GitHub Secrets 中设置的变量名为 EC2_PRIVATE_KEY
           ssh-private-key: ${{ secrets.EC2_PRIVATE_KEY }}
 
-      - name: Deploy application
+      - name: Deploy application via Rsync
         run: |
-          # 使用 root 用户和您提供的 IP 地址
+          # 1. 将本地的 chatbot 文件夹同步到服务器的 chatbot_comp7940/chatbot 目录
+          # -avz: 归档模式、显示进度、压缩传输
+          # --delete: 删除服务器上存在但本地不存在的文件（保持完全一致）
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./chatbot/ root@43.99.17.139:~/chatbot_comp7940/chatbot/
+
+          # 2. 在服务器上重启应用
           ssh -o StrictHostKeyChecking=no root@43.99.17.139 << 'EOF'
           cd ~/chatbot_comp7940
-          git pull origin main
-          # 重启 chatbot 进程
+          
+          # 杀掉旧进程
+          echo "Stopping old process..."
           pkill -f "python chatbot.py" || true
-          nohup ~/chatbot_comp7940/venv/bin/python chatbot.py > app.log 2>&1 &
+          
+          # 启动新进程
+          echo "Starting new process..."
+          # 确保日志文件路径正确，这里假设你想把日志存在上一级目录
+          nohup venv/bin/python chatbot/chatbot.py > app.log 2>&1 &
+          
+          echo "Deployment finished."
           EOF
