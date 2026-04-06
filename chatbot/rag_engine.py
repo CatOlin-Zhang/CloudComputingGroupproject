@@ -103,7 +103,7 @@ class SimpleJobRAG:
             for i, idx in enumerate(indices):
                 score = scores[i]
 
-                # Strategy A: Strict Match (Above Threshold)
+                # Strict Match (Above Threshold)
                 if score >= threshold:
                     results.append(self.job_details[idx])
                 else:
